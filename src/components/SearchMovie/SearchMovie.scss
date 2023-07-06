@@ -1,0 +1,42 @@
+.search-form {
+  margin: 0 auto 50px;
+  max-width: fit-content;
+  display: flex;
+
+  > label > input {
+    border: 2px solid black;
+    border-right: none;
+    outline: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-size: 20px;
+    padding: 4px 8px;
+  }
+
+  > button {
+    padding: 4px 16px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-left: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: background 250ms;
+    &:hover {
+      background-color: tomato;
+      cursor: pointer;
+      > svg {
+        transform: scale(1.1);
+      }
+    }
+
+    > svg {
+      transition: transform 250ms;
+      display: block;
+    }
+
+    &:disabled {
+      background-color: gray;
+      cursor: default;
+    }
+  }
+}
