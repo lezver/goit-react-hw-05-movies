@@ -8,7 +8,9 @@ export const getTranding = async () => {
   let response = '';
 
   try {
-    response = await axios.get(`${BASE_URL}trending/all/day?${API_KEY}`);
+    response = await axios.get(
+      `${BASE_URL}trending/all/day?language=en-US&${API_KEY}`
+    );
   } catch (error) {
     Notiflix.Notify.failure("Oops... Something's wron... try again later:)");
     console.log(error);
@@ -21,7 +23,9 @@ export const getMovieDetails = async id => {
   let response = '';
 
   try {
-    response = await axios.get(`${BASE_URL}movie/${id}?${API_KEY}`);
+    response = await axios.get(
+      `${BASE_URL}movie/${id}?language=en-US&${API_KEY}`
+    );
   } catch (error) {
     Notiflix.Notify.failure("Oops... Something's wron... try again later:)");
     console.log(error);
@@ -35,7 +39,36 @@ export const getSearchMovies = async movie => {
 
   try {
     response = await axios.get(
-      `${BASE_URL}search/movie?query=${movie}&${API_KEY}`
+      `${BASE_URL}search/movie?query=${movie}&include_adult=false&language=en-US&page=1&${API_KEY}`
+    );
+  } catch (error) {
+    Notiflix.Notify.failure("Oops... Something's wron... try again later:)");
+    console.log(error);
+  }
+
+  return response;
+};
+
+export const getCast = async id => {
+  let response = '';
+
+  try {
+    response = await axios.get(
+      `${BASE_URL}movie/${id}/credits?language=en-US&${API_KEY}`
+    );
+  } catch (error) {
+    Notiflix.Notify.failure("Oops... Something's wron... try again later:)");
+    console.log(error);
+  }
+
+  return response;
+};
+export const getReviews = async id => {
+  let response = '';
+
+  try {
+    response = await axios.get(
+      `${BASE_URL}movie/${id}/reviews?language=en-US&page=1&${API_KEY}`
     );
   } catch (error) {
     Notiflix.Notify.failure("Oops... Something's wron... try again later:)");

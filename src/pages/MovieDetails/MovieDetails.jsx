@@ -1,9 +1,15 @@
 import './MovieDetails.scss';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import { ImPointLeft } from 'react-icons/im';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { getMovieDetails } from 'services/Api';
-import { AboutMovie, AdditionalInformation } from 'components';
+import { AboutMovie, Loader } from 'components';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
@@ -21,8 +27,6 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, []);
 
-  console.log(movie);
-
   return (
     <section className="movie-details">
       <Link className="movie-details__back" to={backLinkHref}>
@@ -30,7 +34,20 @@ const MovieDetails = () => {
         Go Back
       </Link>
       <AboutMovie data={movie} />
-      <AdditionalInformation />
+
+      <h2>Additional information</h2>
+
+      <ul className="add-info">
+        <li>
+          <NavLink to="cast">Cast</NavLink>
+        </li>
+        <li>
+          <NavLink to="reviews">Reviews</NavLink>
+        </li>
+      </ul>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </section>
   );
 };

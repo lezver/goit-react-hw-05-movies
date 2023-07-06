@@ -5,7 +5,6 @@ import { TrendMoviesList } from './TrendMoviesList';
 import { SearchMovie } from './SearchMovie';
 import { MoviesList } from './MoviesList';
 import { AboutMovie } from './AboutMovie';
-import { AdditionalInformation } from './AdditionalInformation';
 
 export {
   App,
@@ -15,5 +14,4 @@ export {
   SearchMovie,
   MoviesList,
   AboutMovie,
-  AdditionalInformation,
 };

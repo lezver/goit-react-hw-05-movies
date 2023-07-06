@@ -1,0 +1,37 @@
+.cast {
+  list-style: none;
+  background-color: rgba(255, 99, 71, 0.5);
+  padding: 24px;
+  border-radius: 8px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+
+  > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border: 2px dashed black;
+    padding: 8px;
+    border-radius: 8px;
+    > img {
+      display: block;
+      max-width: 100%;
+    }
+    > h3 {
+      margin: 0;
+    }
+    > p {
+      margin: 0;
+    }
+  }
+}

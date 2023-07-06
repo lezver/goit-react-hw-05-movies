@@ -11,8 +11,9 @@ export const TrendMoviesList = ({ trendMovies }) => (
         </div>
         <img
           src={
-            `https://image.tmdb.org/t/p/w400${backdrop_path}` ??
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmVm-NOFWAwzSDCG2503S24gnb6ij0l6Qz1URGonjsEqkf6fmGza-C7SW9iuHQaJj_7sA&usqp=CAU'
+            backdrop_path
+              ? `https://image.tmdb.org/t/p/w400${backdrop_path}`
+              : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmVm-NOFWAwzSDCG2503S24gnb6ij0l6Qz1URGonjsEqkf6fmGza-C7SW9iuHQaJj_7sA&usqp=CAU'
           }
           alt={title}
         />
