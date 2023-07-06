@@ -4,16 +4,40 @@
   max-width: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 
-  > li > a {
-    text-transform: uppercase;
-    color: black;
-    transition: all 250ms;
-    font-weight: bold;
-    &:hover {
-      text-decoration: none;
-      color: tomato;
+  > li {
+    width: fit-content;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: rgba(255, 99, 71, 0.5);
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px gray;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      > a {
+        text-transform: uppercase;
+        color: black;
+        transition: all 250ms;
+        font-weight: bold;
+        &:hover {
+          text-decoration: none;
+          color: tomato;
+        }
+      }
+    }
+
+    > img {
+      transition: transform 250ms;
+      border-radius: 8px;
+      display: block;
+      height: 150px;
     }
   }
 }

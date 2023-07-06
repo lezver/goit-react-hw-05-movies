@@ -3,6 +3,7 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { ImPointLeft } from 'react-icons/im';
 import { useEffect, useState } from 'react';
 import { getMovieDetails } from 'services/Api';
+import { AboutMovie, AdditionalInformation } from 'components';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
@@ -20,13 +21,16 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, []);
 
+  console.log(movie);
+
   return (
     <section className="movie-details">
       <Link className="movie-details__back" to={backLinkHref}>
         <ImPointLeft size={24} />
         Go Back
       </Link>
-      <div>MovieDetails</div>
+      <AboutMovie data={movie} />
+      <AdditionalInformation />
     </section>
   );
 };

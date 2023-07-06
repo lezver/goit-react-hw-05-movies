@@ -1,0 +1,30 @@
+.not-found {
+  > h2 {
+    font-size: 32px;
+    color: tomato;
+    text-align: center;
+  }
+
+  > button {
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: rgb(201, 201, 201);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 250ms;
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &:hover {
+      color: tomato;
+      background-color: rgb(255, 189, 177);
+      border-color: tomato;
+    }
+  }
+}
