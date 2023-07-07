@@ -24,7 +24,7 @@ const MovieDetails = () => {
       return setMovie(response.data);
     };
 
-    fetchMovieDetails();
+    fetchMovieDetails(); // eslint-disable-next-line
   }, []);
 
   return (

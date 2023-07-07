@@ -15,26 +15,32 @@ const Cast = () => {
       return setCast([...response.data.cast]);
     };
 
-    fetchCast();
-  }, [cast]);
+    fetchCast(); // eslint-disable-next-line
+  }, []);
 
   return (
-    <ul className="cast">
-      {cast.map(({ id, name, character, profile_path }) => (
-        <li key={id}>
-          <img
-            src={
-              profile_path
-                ? `https://image.tmdb.org/t/p/w200${profile_path}`
-                : 'https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg'
-            }
-            alt={name}
-          />
-          <h3>{name}</h3>
-          <span>{character}</span>
-        </li>
-      ))}
-    </ul>
+    <>
+      {cast.length ? (
+        <ul className="cast">
+          {cast.map(({ id, name, character, profile_path }) => (
+            <li key={id}>
+              <img
+                src={
+                  profile_path
+                    ? `https://image.tmdb.org/t/p/w200${profile_path}`
+                    : 'https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg'
+                }
+                alt={name}
+              />
+              <h3>{name}</h3>
+              <span>{character}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <h3>Sorry, we have no cast yet...</h3>
+      )}
+    </>
   );
 };
 

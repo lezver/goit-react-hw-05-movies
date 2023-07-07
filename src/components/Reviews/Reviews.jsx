@@ -14,8 +14,8 @@ const Reviews = () => {
       return setReviews([...response.data.results]);
     };
 
-    fetchReviews();
-  }, [reviews]);
+    fetchReviews(); // eslint-disable-next-line
+  }, []);
 
   return (
     <>

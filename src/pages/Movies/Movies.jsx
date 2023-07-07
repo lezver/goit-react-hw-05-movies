@@ -20,7 +20,7 @@ const Movies = () => {
       }
     };
 
-    moviesList();
+    moviesList(); // eslint-disable-next-line
   }, []);
 
   const fetchSearchMovie = async () => {
