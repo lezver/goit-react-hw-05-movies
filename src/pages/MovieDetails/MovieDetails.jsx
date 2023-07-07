@@ -7,7 +7,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import { ImPointLeft } from 'react-icons/im';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { getMovieDetails } from 'services/Api';
 import { AboutMovie, Loader } from 'components';
 
@@ -15,7 +15,7 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const { id } = useParams();
   const { state } = useLocation();
-  const backLinkHref = state?.form ?? '/';
+  const { current } = useRef(state?.from ?? '/');
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -29,10 +29,11 @@ const MovieDetails = () => {
 
   return (
     <section className="movie-details">
-      <Link className="movie-details__back" to={backLinkHref}>
+      <Link className="movie-details__back" to={current}>
         <ImPointLeft size={24} />
         Go Back
       </Link>
+
       <AboutMovie data={movie} />
 
       <h2>Additional information</h2>
@@ -45,6 +46,7 @@ const MovieDetails = () => {
           <NavLink to="reviews">Reviews</NavLink>
         </li>
       </ul>
+
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>

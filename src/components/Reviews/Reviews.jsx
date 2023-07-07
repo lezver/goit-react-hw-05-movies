@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { id } = useParams();
+
   useEffect(() => {
     const fetchReviews = async () => {
       const response = await getReviews(id);
@@ -14,7 +15,7 @@ const Reviews = () => {
     };
 
     fetchReviews();
-  }, []);
+  }, [reviews]);
 
   return (
     <>
@@ -28,7 +29,7 @@ const Reviews = () => {
           ))}
         </ul>
       ) : (
-        <h3>Sorry...</h3>
+        <h3>Sorry, we have no reviews yet...</h3>
       )}
     </>
   );

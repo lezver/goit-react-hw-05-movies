@@ -16,7 +16,7 @@ const Cast = () => {
     };
 
     fetchCast();
-  }, []);
+  }, [cast]);
 
   return (
     <ul className="cast">

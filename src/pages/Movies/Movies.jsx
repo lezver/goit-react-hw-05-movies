@@ -24,10 +24,10 @@ const Movies = () => {
   }, []);
 
   const fetchSearchMovie = async () => {
-    await setIsLoading(true);
+    setIsLoading(true);
     const response = await getSearchMovies(searchParams.get('query'));
-    await setMoviesList([...response.data.results]);
-    await setIsLoading(false);
+    setMoviesList([...response.data.results]);
+    setIsLoading(false);
   };
 
   const updateQueryString = query => {
@@ -47,7 +47,7 @@ const Movies = () => {
           <Loader />
         </div>
       ) : (
-        <MoviesList moviesList={moviesList} form={location} />
+        <MoviesList moviesList={moviesList} from={location} />
       )}
     </section>
   );
