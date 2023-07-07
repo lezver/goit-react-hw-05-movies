@@ -1,5 +1,6 @@
 import './MoviesList.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const MoviesList = ({ moviesList, from }) => (
   <ul className="movies-list">
@@ -23,3 +24,8 @@ export const MoviesList = ({ moviesList, from }) => (
     ))}
   </ul>
 );
+
+MoviesList.propTypes = {
+  moviesList: PropTypes.array.isRequired,
+  from: PropTypes.object.isRequired,
+};

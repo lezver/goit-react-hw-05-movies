@@ -1,5 +1,6 @@
 import './TrendMoviesList.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const TrendMoviesList = ({ trendMovies }) => (
   <ul className="trend-list">
@@ -21,3 +22,7 @@ export const TrendMoviesList = ({ trendMovies }) => (
     ))}
   </ul>
 );
+
+TrendMoviesList.propTypes = {
+  trendMovies: PropTypes.array.isRequired,
+};

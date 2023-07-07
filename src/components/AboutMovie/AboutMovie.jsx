@@ -1,4 +1,5 @@
 import './AboutMovie.scss';
+import PropTypes from 'prop-types';
 
 export const AboutMovie = ({
   data: {
@@ -45,3 +46,7 @@ export const AboutMovie = ({
     </ul>
   </div>
 );
+
+AboutMovie.propTypes = {
+  data: PropTypes.object.isRequired,
+};

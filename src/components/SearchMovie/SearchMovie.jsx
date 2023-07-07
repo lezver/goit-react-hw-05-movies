@@ -1,5 +1,6 @@
 import './SearchMovie.scss';
 import { HiSearch } from 'react-icons/hi';
+import PropTypes from 'prop-types';
 
 export const SearchMovie = ({ search, onChange, value }) => {
   const handlerForm = e => {
@@ -30,4 +31,10 @@ export const SearchMovie = ({ search, onChange, value }) => {
       </button>
     </form>
   );
+};
+
+SearchMovie.propTypes = {
+  search: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
